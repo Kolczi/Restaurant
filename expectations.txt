@@ -1,0 +1,15 @@
+waiter can input a order with an app
+
+waiter can print out a receit 
+
+cooks get the ticket printed 
+
+manager can see what was sold in what quantity
+
+manager can create, edit and delete food items.
+
+food items can be grouped into dishes
+
+swapping part of a dish for something else
+
+keep track of stock
