@@ -1,0 +1,36 @@
+{
+  "name": "restaurant_app",
+  "version": "0.0.1",
+  "description": "An app for restaurants",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --legacy-watch index.js",
+    "migrate": "knex migrate:latest --knexfile db/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile db/knexfile.js",
+    "create-migration": "knex migrate:make $1 --knexfile db/knexfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kolczi/Restaurant"
+  },
+  "_moduleAliases": {
+    "@config": "./config/index.js",
+    "@app": "./app/index.js",
+    "@db": "./db/connection.js"
+  },
+  "author": "Michał Kolczok",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.17.1",
+    "knex": "^3.1.0",
+    "module-alias": "^2.2.3",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "nodemon": "^3.1.7"
+  }
+}

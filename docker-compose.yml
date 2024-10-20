@@ -1,13 +1,24 @@
 services:
   nodejs-server:
-    image: node:14-alpine
+    image: node:20
     ports:
-      - "8080:8080"
+      - "8080:8080"  # Exposes port 8080 to the host and the world
     volumes:
-      - ./app:/app
-    working_dir: /app
+      - ./backend:/restaurant-api
+    working_dir: /restaurant-api
     command: npm start
-
-    # Optional: Specify environment variables if needed
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
+
+  db:
+    image: postgres:13
+    ports: 
+      - "5432:5432"  # Exposes port 5432 to the host and the world  
+    environment:
+      POSTGRES_USER: restaurant
+      POSTGRES_PASSWORD: reallyGoodPassword
+      POSTGRES_DB: restaurant
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
